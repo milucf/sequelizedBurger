@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-sm-12 bgm">
+        <img  src="/assets/img/chef.png" class="img-responsive img-center" >
+        <div>
+            <input  type="text" class="form-control" id="cus-name" placeholder="Name Of The Customer" >
+        </div><br>
+        <div class="input-group">
+            <input id="burger-name" type="text" class="form-control" placeholder="Name Of The Burger" name="txtBurgerName">
+            <div class="input-group-btn">
+                <button id="burger-add" class="btn btn-default" >add</button>
+            </div>
+        </div>
+        <div class="order-list">
+            <ul id="burgerList"></ul>
+        </div>
+        <button id="burger-submit" class="btn btn-primary" >submit</button> <span id="alertMsg"></span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 bgl">
+        <h2>waiting to be devoured.</h2>
+        <ul id="ulNotdevoured" class="list-group">
+            {{#each burgers}} 
+            {{#unless this.devoured}}
+            <li class="list-group-item list-group-item-warning">
+                {{this.Customer.customer_name}}
+                ordered
+                {{this.burger_name}}
+                <button type="button" data-burgerid="{{this.id}}" class="btn-default btn-devour">devour it!</button>
+            </li>
+            {{/unless}} {{/each}}
+        </ul>
+    </div>
+    <div class="col-sm-6 bgr">
+        <h2>devoured.</h2>
+        <ul id="uldevoured" class="list-group">
+            {{#each burgers}} 
+            {{#if this.devoured}}
+            <li class="list-group-item list-group-item-success">
+                {{this.Customer.customer_name}}
+                devoured
+                {{this.burger_name}}
+            </li>
+            {{/if}} {{/each}}
+        </ul>
+    </div>
+</div>
