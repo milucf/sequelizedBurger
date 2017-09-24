@@ -2,7 +2,7 @@
 
 ## Overview
 
- This is a burger logger with MySQL, Node, Express, Handlebars and a Sequelize.
+ This is a burger logger with MySQL, Node, Express, Handlebars and Sequelize.
 
 
  ## How It Works
